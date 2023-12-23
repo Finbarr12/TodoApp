@@ -7,7 +7,7 @@ todoroute = Blueprint("todoroute",__name__, url_prefix="/api/v1")
 
 @todoroute.post("/createtodo")
 def createTodo():
-    todo_post = request.get_json()
+    todo_post = request.json()
 
     newtodo = Todo(name = todo_post["name"], description = todo_post["desc"])
     newtodo.save()
